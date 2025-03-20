@@ -1,3 +1,4 @@
+//imports dos componentes e link
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, Image} from 'react-native';
 
@@ -23,10 +24,10 @@ export default function App() {
       {/* */}
 
 
-      <Text>Vai Flamengo!</Text>
+      <Text style={{fontSize: 50}}>Vai Flamengo!</Text>
       <StatusBar style="auto" />
 
-      <Button title='Alerta' onPress= {alerta}></Button>
+      <Button title='alerta' onPress= {alerta}></Button>
 
       <Image source={ { uri: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.todamateria.com.br%2Fleao%2F&psig=AOvVaw3zkS0hrM1a9e1MPmxFBlBb&ust=1741998777891000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCJiAjqapiIwDFQAAAAAdAAAAABAE' }}
       style={{
@@ -38,11 +39,18 @@ export default function App() {
   );
 }
 
+
+// Estilos
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'yelow',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  textoGrande: {
+    fontSize: 50,
+    fontWeight: 400,
+    fontStyle: 'italic'
+  }
 });
