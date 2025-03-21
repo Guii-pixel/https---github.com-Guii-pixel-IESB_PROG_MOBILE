@@ -1,56 +1,70 @@
-//imports dos componentes e link
+// imports dos componentes e libs
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Image} from 'react-native';
+import { StyleSheet, Text, View, Button, Image, ScrollView } from 'react-native';
 
-
-//Componenete principal 
-// Ele deve retornar o que será renderizado na tela (template feito com JSX)
+// função principal do componente
 export default function App() {
- //Lógica do meu componente
-  const nome = "Guilherme"
+  // lógica do meu componente
+  const nome = "Gustavo"
 
   function alerta() {
-    alert("Você clicou no botão")
+    alert('Clicou no Botão!!!')
   }
 
-
-
-
- //retorno com JSX
+  // retorno é um código JSX (Template) do que vai ser
+  // renderizado na tela
   return (
-    <View style={styles.container}>
+    <ScrollView>
+
+      <View style={styles.container}>
+        <StatusBar style="auto" />
+
+        <Text style={{ fontSize: 40 }} >MEU TEXTO</Text>
+        <Text style={{ fontSize: 40 }} >{nome}</Text>
+        <Text style={styles.textoGrande} >Open up App.js to start working on your app!</Text>
+
+        <Button title='ENVIAR' onPress={alerta} ></Button>
+
+        <Image
+          source={{
+            uri: 'https://i.pinimg.com/736x/47/e7/fd/47e7fd39f8e5a44877234f1d3c7bf1dc.jpg'
+          }}
+          style={{
+            height: 300,
+            width: 300
+          }}
+        />
+
+        <Image
+          source={require('./images/img-neymar.jpg')}
+          style={{
+            height: 300,
+            width: 300
+          }}
+        />
+        
 
 
-      {/* */}
+      </View>
 
 
-      <Text style={{fontSize: 50}}>Vai Flamengo!</Text>
-      <StatusBar style="auto" />
-
-      <Button title='alerta' onPress= {alerta}></Button>
-
-      <Image source={ { uri: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.todamateria.com.br%2Fleao%2F&psig=AOvVaw3zkS0hrM1a9e1MPmxFBlBb&ust=1741998777891000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCJiAjqapiIwDFQAAAAAdAAAAABAE' }}
-      style={{
-        height: 300,
-        width: 300
-      }}
-      />
-    </View>
+    </ScrollView>    
   );
 }
-
 
 // Estilos
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'yelow',
+    backgroundColor: 'yellow',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: 50
   },
   textoGrande: {
     fontSize: 50,
-    fontWeight: 400,
+    fontWeight: 900,
     fontStyle: 'italic'
   }
 });
