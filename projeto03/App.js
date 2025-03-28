@@ -33,7 +33,7 @@ export default function App() {
         <StatusBar style="auto" />
 
         {
-          listaAtletas.map(
+          listaFilme.map(
             atleta => {
               return (
                 <Atleta
